@@ -1,3 +1,3 @@
 function camelize(str) {
-  // ваш код...
+  return str.replace(/-(\b[a-z])/g, (s, founded) => founded.toUpperCase());
 }
