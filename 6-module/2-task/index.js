@@ -3,7 +3,11 @@ import createElement from '../../assets/lib/create-element.js';
 export default class ProductCard {
   constructor(product) {
     this.product = product;
-    this.elem = this.render();
+    this._container = this.render();
+  }
+
+  get elem() {
+    return this._container;
   }
 
   render() {
