@@ -85,9 +85,8 @@ export default class Carousel {
       let innerRightArrow = document.querySelector('.carousel__arrow_right');
       let innerLeftArrow = document.querySelector('.carousel__arrow_left');
 
-      // Должно быть 3
-      event.currentTarget.position === totalSlides ? innerRightArrow.style.display = 'none' : innerRightArrow.style.display = '';
-      event.currentTarget.position === 0 ? innerLeftArrow.style.display = 'none' : innerLeftArrow.style.display = '';
+      innerRightArrow.style.display = event.currentTarget.position === totalSlides ? 'none' : '';
+      innerLeftArrow.style.display = event.currentTarget.position === 0 ? 'none' : '';
     }
   }
 }
