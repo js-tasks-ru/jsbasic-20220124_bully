@@ -19,10 +19,10 @@ export default class UserTable {
   }
 
   render() {
-    let table = document.createElement("table");
+    let table = document.createElement('table');
 
     table.insertAdjacentHTML(
-      "afterbegin",
+      'afterbegin',
       `<thead>
     <tr>
       <th>Имя</th>
@@ -36,7 +36,7 @@ export default class UserTable {
 
     for (let row of this.rows) {
       table.insertAdjacentHTML(
-        "beforeend",
+        'beforeend',
         `<tr>
                  <td>${row.name}</td>
                  <td>${row.age}</td>
@@ -48,13 +48,13 @@ export default class UserTable {
              </tr>`
       );
     }
-    table.addEventListener("click", this.deleteRow);
+    table.addEventListener('click', this.deleteRow);
 
     return table;
   }
 
   deleteRow(event) {
-    let btn = event.target.closest("button");
+    let btn = event.target.closest('button');
 
     if (btn) {
       let targetRow = btn.parentNode.parentNode;
