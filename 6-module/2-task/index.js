@@ -14,9 +14,8 @@ export default class ProductCard {
     let price = this.product.price.toFixed(2);
     let productName = this.product.name;
     let productImage = this.product.image;
-    let card;
 
-    card = createElement(`
+    let card = createElement(`
     <div class="card">
       <div class="card__top">
         <img src="/assets/images/products/${productImage}" class="card__image" alt="product">
