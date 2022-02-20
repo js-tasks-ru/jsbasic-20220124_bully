@@ -67,6 +67,7 @@ export default class Carousel {
     let leftArrow = event.target.closest('.carousel__arrow_left');
     let carouselInner = event.currentTarget.querySelector('.carousel__inner');
     let slideWidth = carouselInner.offsetWidth;
+    let totalSlides = event.currentTarget.querySelectorAll('.carousel__slide').length - 1;
 
     if (rightArrow) {
       event.currentTarget.position++;
@@ -85,7 +86,7 @@ export default class Carousel {
       let innerLeftArrow = document.querySelector('.carousel__arrow_left');
 
       // Должно быть 3
-      event.currentTarget.position === 2 ? innerRightArrow.style.display = 'none' : innerRightArrow.style.display = '';
+      event.currentTarget.position === totalSlides ? innerRightArrow.style.display = 'none' : innerRightArrow.style.display = '';
       event.currentTarget.position === 0 ? innerLeftArrow.style.display = 'none' : innerLeftArrow.style.display = '';
     }
   }
