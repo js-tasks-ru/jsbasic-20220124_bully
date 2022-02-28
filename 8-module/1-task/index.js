@@ -39,14 +39,13 @@ export default class CartIcon {
   }
 
   updatePosition() {
-    if (!this.elem.offsetHeight) {return;} // not visible
+    if (!this.elem.offsetHeight) {return;}
 
     if (!this.initialTopCoord) {
       this.initialTopCoord = this.elem.getBoundingClientRect().top + window.pageYOffset;
     }
 
     if (document.documentElement.clientWidth <= 767) {
-      // mobile: cart is always fixed
       this.resetPosition();
       return;
     }
@@ -66,7 +65,6 @@ export default class CartIcon {
       top: '50px',
       zIndex: 1e3,
       left: Math.min(
-        // справа от содержимого (определяем по первому контейнеру в нашей вёрстке)
         document.querySelector('.container').getBoundingClientRect().right + 20,
         document.documentElement.clientWidth - this.elem.offsetWidth - 10
       ) + 'px'
@@ -122,4 +120,3 @@ export default class CartIcon {
     }
   }
 }
-

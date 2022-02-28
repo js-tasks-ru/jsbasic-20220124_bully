@@ -59,6 +59,5 @@ export default class ProductGrid {
       let productCard = new ProductCard(product);
       productsGridInner.append(productCard.elem);
     }
-
   }
 }
